@@ -15,12 +15,13 @@ public class TKerdes {
                 + "A ládákon ezek állnak:\n");
 
         System.out.println("");
-        System.out.println("Arany láda: Bennem van a kincs");
-        System.out.println("Ezüst láda: Nem én rejtem a kincset");
-        System.out.println("Bronz láda: Az arany láda hazudik");
+        System.out.println("1: Arany láda: Bennem van a kincs");
+        System.out.println("2: Ezüst láda: Nem én rejtem a kincset");
+        System.out.println("3: Bronz láda: Az arany láda hazudik");
     }
 
-    public String valasz() {
+    public String valasz(int szam) {
+        valasz = szam;
         int joValasz = 2;
         if (valasz == joValasz) {
             return "Helyes";
