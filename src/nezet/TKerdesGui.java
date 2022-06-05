@@ -1,5 +1,8 @@
 package nezet;
 
+import javax.swing.JOptionPane;
+import modell.TKerdes;
+
 public class TKerdesGui extends javax.swing.JFrame {
 
     public TKerdesGui() {
@@ -11,6 +14,8 @@ public class TKerdesGui extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        arany = new javax.swing.JButton();
+        ezust = new javax.swing.JButton();
         bronz = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -19,7 +24,21 @@ public class TKerdesGui extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        bronz.setText("3. láda");
+        arany.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/aranylada.png"))); // NOI18N
+        arany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aranyActionPerformed(evt);
+            }
+        });
+
+        ezust.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/ezustlada.png"))); // NOI18N
+        ezust.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ezustActionPerformed(evt);
+            }
+        });
+
+        bronz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/nezet/bronzlada.png"))); // NOI18N
         bronz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bronzActionPerformed(evt);
@@ -31,16 +50,23 @@ public class TKerdesGui extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(343, 343, 343)
+                .addGap(52, 52, 52)
+                .addComponent(arany)
+                .addGap(43, 43, 43)
+                .addComponent(ezust)
+                .addGap(42, 42, 42)
                 .addComponent(bronz)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(bronz)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bronz)
+                    .addComponent(ezust)
+                    .addComponent(arany))
+                .addContainerGap())
         );
 
         jTextArea1.setEditable(false);
@@ -54,11 +80,11 @@ public class TKerdesGui extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -67,15 +93,23 @@ public class TKerdesGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(33, 33, 33))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void aranyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aranyActionPerformed
+        valasz(1);
+    }//GEN-LAST:event_aranyActionPerformed
+
+    private void ezustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ezustActionPerformed
+        valasz(2);
+    }//GEN-LAST:event_ezustActionPerformed
+
     private void bronzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bronzActionPerformed
-        // TODO add your handling code here:
+        valasz(3);
     }//GEN-LAST:event_bronzActionPerformed
 
     public static void main(String args[]) {
@@ -109,9 +143,18 @@ public class TKerdesGui extends javax.swing.JFrame {
             }
         });
     }
+    
+    private static void valasz(int szam) {
+        TKerdes kerdes = new TKerdes(szam);
+        String eredmeny = kerdes.valasz(szam);
+        JOptionPane.showMessageDialog(null, eredmeny);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton arany;
     private javax.swing.JButton bronz;
+    private javax.swing.JButton ezust;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
