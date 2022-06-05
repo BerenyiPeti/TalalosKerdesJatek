@@ -10,35 +10,33 @@ Lehetséges válaszok:
 
 1. lehetőség: aranynak van igaza
 
-Láda:            Benne van a kincs                   
-                 (a rajta lévő állítás szerint):            
+Láda:___________ Benne van a kincs (a rajta lévő állítás szerint):              
+                            
 
-Arany            igen                                   
+Arany___________ igen                                   
 
-Ezüst            igen
+Ezüst___________ igen
 
-Bronz            nem
+Bronz___________ nem
 
 2. lehetőség: ezüstnek van igaza -> az arany és bronz tagadja egymást, ez lehetetlen
 
-Láda:            Benne van a kincs                   
-                 (a rajta lévő állítás szerint): 
+Láda:            Benne van a kincs (a rajta lévő állítás szerint): 
                  
-Arany            nem
+Arany___________ nem
 
-Ezüst            nem
+Ezüst___________ nem
 
-Bronz            nem
+Bronz___________ nem
 
 3. lehetőség: bronznak van igaza -> itt csak az ezüstben lehet, mivel a bronz megerősíti, hogy az aranyban nem lehet, az ezüst pedig hazudik, tehát ez a jó megoldás
 
-Láda:            Benne van a kincs                   
-                 (a rajta lévő állítás szerint): 
+Láda:___________ Benne van a kincs (a rajta lévő állítás szerint): 
                  
-Arany            nem
+Arany___________ nem
 
-Ezüst            igen
+Ezüst___________ igen
 
-Bronz            nem
+Bronz___________ nem
 
 
