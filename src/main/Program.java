@@ -2,13 +2,17 @@ package main;
 
 import java.util.Scanner;
 import modell.TKerdes;
+import nezet.TKerdesGui;
 
 public class Program {
 
     private static int beker;
 
     public static void main(String[] args) {
-        TKerdes kerdes = new TKerdes(1);
+        TKerdesGui gui = new TKerdesGui();
+        gui.main(args);
+        
+        /*TKerdes kerdes = new TKerdes(1);
         kerdes.kiir();
         Scanner sc = new Scanner(System.in);
         System.out.print("Melyikben van a láda?: ");
@@ -19,7 +23,7 @@ public class Program {
             }
         } while (!(beker >= 1 && beker <= 3));
 
-        System.out.println(kerdes.valasz(beker));
+        System.out.println(kerdes.valasz(beker));*/
         
     }
 
